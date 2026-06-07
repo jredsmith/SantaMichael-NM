@@ -1,0 +1,18 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/
+
+# Logs / temp
+*.log
+node_modules/
+dist/
+
+# Secrets — never commit real keys.
+# (The Web3Forms access key in index.html is a public client key and is fine
+#  to commit. If you later add a server/.env with private keys, keep it out:)
+.env
+.env.*

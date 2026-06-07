@@ -1,0 +1,159 @@
+/* =============================================================
+   DESIGN TOKENS — the single source of truth for the whole site
+   -------------------------------------------------------------
+   Two layers:
+     1. PRIMITIVES  — raw values (a palette, a scale). Rarely used
+                      directly in components.
+     2. SEMANTIC    — meaning-based aliases (--color-bg, --space-md…)
+                      that the rest of the CSS actually references.
+
+   To re-theme the site, change values here. Do NOT hardcode colors
+   or sizes anywhere else — reference a token instead.
+   See DESIGN-SYSTEM.md for the full reference.
+   ============================================================= */
+
+:root {
+  /* ---------------------------------------------------------
+     1. COLOR PRIMITIVES — the raw palette
+     --------------------------------------------------------- */
+  --c-night-900: #14070a;
+  --c-night-700: #3d101a;
+  --c-wine-700:  #961c28;   /* deep festive red used in bg glow */
+
+  --c-cream-100: #f4ece0;
+  --c-gold-400:  #eab95f;
+  --c-gold-300:  #f0cd86;   /* lighter gold for highlights */
+  --c-red-400:   #e35d4e;
+  --c-red-600:   #b23b3b;
+  --c-green-300: #bfe6c8;   /* success text */
+  --c-green-500: #63aa78;   /* success accent */
+
+  --c-black: #000;
+
+  /* ---------------------------------------------------------
+     2. SEMANTIC COLOR TOKENS — use these in components
+     --------------------------------------------------------- */
+  --color-bg:            var(--c-night-900);
+  --color-bg-alt:        var(--c-night-700);
+  --color-text:          var(--c-cream-100);
+  --color-text-dim:      rgba(244, 236, 224, 0.64);
+
+  --color-accent:        var(--c-gold-400);   /* primary accent: gold */
+  --color-accent-soft:   var(--c-gold-300);
+  --color-brand:         var(--c-red-400);    /* secondary brand: red  */
+  --color-brand-deep:    var(--c-red-600);
+
+  /* surfaces */
+  --surface:             rgba(244, 236, 224, 0.05);
+  --surface-hover:       rgba(244, 236, 224, 0.07);
+  --surface-line:        rgba(244, 236, 224, 0.13);
+  --surface-input:       rgba(20, 7, 10, 0.6);
+
+  /* feedback */
+  --color-success-bg:    rgba(99, 170, 120, 0.15);
+  --color-success-line:  rgba(99, 170, 120, 0.5);
+  --color-success-text:  var(--c-green-300);
+  --color-error-bg:      rgba(214, 90, 78, 0.15);
+  --color-error-line:    rgba(214, 90, 78, 0.5);
+  --color-error-text:    #f3c1bb;
+
+  /* gradients */
+  --gradient-accent:     linear-gradient(135deg, var(--color-accent), var(--color-brand));
+  --gradient-bg:         linear-gradient(160deg, #14070a 0%, #3d101a 55%, #14070a 100%);
+
+  /* scenery (decorative background: sleigh + forest) */
+  --color-forest:      #14241b;   /* front pines (dark) */
+  --color-forest-back: #25412f;   /* back pines (lighter, for depth) */
+  --color-snow:        var(--c-cream-100);
+
+  /* ---------------------------------------------------------
+     3. TYPOGRAPHY
+     --------------------------------------------------------- */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "Hanken Grotesk", system-ui, -apple-system, Segoe UI, sans-serif;
+  --font-stamp:   "Special Elite", "Courier New", ui-monospace, monospace; /* typewriter — classified dossier theme */
+
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-black:    900;
+
+  /* fluid type scale (clamp: min, preferred, max) */
+  --text-xs:   0.78rem;
+  --text-sm:   0.9rem;
+  --text-base: 1rem;
+  --text-md:   1.06rem;
+  --text-lg:   1.16rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  clamp(1.9rem, 5vw, 3rem);     /* h2 */
+  --text-3xl:  clamp(2.7rem, 8vw, 6rem);     /* h1 */
+
+  --leading-tight:  1.05;
+  --leading-snug:   1.2;
+  --leading-normal: 1.6;
+  --tracking-wide:  0.04em;
+  --tracking-caps:  0.3em;    /* eyebrow / overline */
+
+  /* ---------------------------------------------------------
+     4. SPACING SCALE (4px base)
+     --------------------------------------------------------- */
+  --space-2xs: 0.4rem;
+  --space-xs:  0.6rem;
+  --space-sm:  0.8rem;
+  --space-md:  1rem;
+  --space-lg:  1.6rem;
+  --space-xl:  2.4rem;
+  --space-2xl: 3.2rem;
+  --space-3xl: 5rem;
+
+  /* section vertical rhythm */
+  --section-pad: 5rem;
+
+  /* ---------------------------------------------------------
+     5. RADII
+     --------------------------------------------------------- */
+  --radius-sm:   11px;
+  --radius-md:   16px;
+  --radius-lg:   18px;
+  --radius-xl:   22px;
+  --radius-pill: 999px;
+
+  /* ---------------------------------------------------------
+     6. SHADOWS
+     --------------------------------------------------------- */
+  --shadow-soft:    0 12px 30px -8px rgba(214, 90, 78, 0.6);
+  --shadow-panel:   0 24px 60px -20px rgba(0, 0, 0, 0.7);
+  --shadow-hover:   0 18px 38px -8px rgba(214, 90, 78, 0.75);
+
+  /* ---------------------------------------------------------
+     7. LAYOUT
+     --------------------------------------------------------- */
+  --container:        1120px;
+  --container-narrow: 780px;
+  --gutter:           24px;
+  --nav-height:       72px;
+
+  /* ---------------------------------------------------------
+     8. MOTION
+     --------------------------------------------------------- */
+  --ease:           cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.2s var(--ease);
+  --transition:      0.25s var(--ease);
+  --transition-slow: 0.8s ease;
+
+  /* ---------------------------------------------------------
+     9. Z-INDEX
+     --------------------------------------------------------- */
+  --z-bg:    -2;
+  --z-fx:    -1;   /* grain, snow */
+  --z-nav:   50;
+}
+
+/* ---------------------------------------------------------
+   BREAKPOINTS (reference only — CSS vars can't be used in
+   media queries, so keep these values in sync by hand):
+     --bp-sm: 560px
+     --bp-md: 820px
+     --bp-lg: 880px
+   --------------------------------------------------------- */

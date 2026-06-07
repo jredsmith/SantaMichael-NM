@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santa Michael of New Mexico — Book a Visit from Santa</title>
+  <meta name="description" content="Santa Michael of New Mexico — a real-bearded, insured, background-checked Santa for corporate events, private parties, home visits, photo sessions, tree lightings, and more across New Mexico.">
+
+  <!-- Open Graph (social sharing previews) -->
+  <meta property="og:title" content="Santa Michael of New Mexico">
+  <meta property="og:description" content="A real-bearded, insured, background-checked Santa for events across New Mexico.">
+  <meta property="og:type" content="website">
+  <!-- EDIT: set to your live URL + a share image once hosted
+  <meta property="og:url" content="https://your-domain.com">
+  <meta property="og:image" content="https://your-domain.com/photos/og-image.jpg"> -->
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets — ORDER MATTERS: tokens first -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="scene" aria-hidden="true">
+    <div class="sleigh">
+      <svg viewBox="0 0 620 150" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <!-- Reindeer (reused) -->
+        <symbol id="deer" viewBox="0 0 130 110">
+          <g stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="none">
+            <path d="M44 66 L30 104"/>
+            <path d="M54 68 L60 104"/>
+            <path d="M74 66 L90 102"/>
+            <path d="M68 68 L70 104"/>
+          </g>
+          <path d="M30 50 q-12 -2 -12 -12" stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <ellipse cx="60" cy="56" rx="30" ry="14"/>
+          <path d="M82 50 q16 0 24 -16 q3 -8 11 -7 q6 2 3 11 q-3 10 -13 15 q-12 6 -28 7 z"/>
+          <circle cx="118" cy="22" r="4"/>
+          <path d="M104 24 l-8 -2 6 6 z"/>
+          <g stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none">
+            <path d="M112 20 l3 -16"/>
+            <path d="M112 20 l-6 -12"/>
+            <path d="M115 9 l7 -3"/>
+            <path d="M108 11 l-6 -4"/>
+          </g>
+        </symbol>
+
+        <!-- Sleigh + Santa -->
+        <g transform="translate(6,40)">
+          <path d="M8 98 q-4 12 10 12 h92 q20 0 26 -16" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+          <path d="M120 100 q12 0 12 -14 q0 -5 -6 -5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+          <path d="M22 96 q-8 -8 -2 -22 q4 -10 18 -10 h40 q14 0 14 18 v14 z"/>
+          <ellipse cx="34" cy="58" rx="13" ry="15"/>
+          <path d="M52 92 q-6 -26 8 -34 q14 -6 18 8 q3 16 -2 26 z"/>
+          <circle cx="66" cy="44" r="8"/>
+          <path d="M58 42 Q62 22 80 28 L70 44 Z"/>
+          <circle cx="81" cy="27" r="3"/>
+        </g>
+
+        <!-- Reins -->
+        <g fill="none" stroke="currentColor" stroke-width="2" opacity="0.6">
+          <path d="M104 96 Q150 96 210 104"/>
+          <path d="M104 98 Q240 96 330 100"/>
+          <path d="M104 100 Q360 100 450 106"/>
+        </g>
+
+        <!-- Team -->
+        <use href="#deer" x="180" y="36" width="114" height="96"/>
+        <use href="#deer" x="300" y="30" width="114" height="96"/>
+        <use href="#deer" x="420" y="36" width="114" height="96"/>
+      </svg>
+    </div>
+    <div class="treeline"></div>
+  </div>
+  <div class="grain"></div>
+  <canvas id="snow"></canvas>
+
+  <nav>
+    <div class="wrap nav-in">
+      <div class="brand">Santa&nbsp;Michael<span class="dot">.</span></div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#photos">Photos</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#home-visit">Home Visit Form</a>
+        <a href="#terms">Terms</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">New Mexico · Real beard · Insured · Background-checked</div>
+      <h1>Santa Michael<br>of <span class="glow">New Mexico</span></h1>
+      <p class="lead">Bringing the magic of the season to life — for corporate events, private parties, home visits, photo sessions, tree lightings, and beyond.</p>
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-primary">Contact Santa Michael →</a>
+        <a href="#services" class="btn btn-ghost">See services</a>
+      </div>
+      <div class="trust">
+        <span>🎅 <b>Real</b> beard</span>
+        <span>🛡️ <b>Insured</b></span>
+        <span>✓ <b>Background-checked</b></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Services offered</div>
+        <h2>Wherever the magic is needed</h2>
+        <p class="sub">From boardrooms to living rooms — anywhere Santa would be a welcome addition to bring the season to life.</p>
+      </div>
+      <div class="cards">
+        <div class="card reveal"><div class="ic">🏢</div><h3>Corporate Events</h3><p>Company parties, client appreciation, and holiday gatherings with a touch of wonder.</p></div>
+        <div class="card reveal"><div class="ic">🎉</div><h3>Private Events</h3><p>Family celebrations, neighborhood parties, and special occasions of every kind.</p></div>
+        <div class="card reveal"><div class="ic">🏡</div><h3>Home Visits</h3><p>A personal visit from Santa, right at your door — names, wishes, and all.</p></div>
+        <div class="card reveal"><div class="ic">📸</div><h3>Photo Sessions</h3><p>Picture-perfect keepsakes with a genuine, warm-hearted Santa.</p></div>
+        <div class="card reveal"><div class="ic">🌲</div><h3>Tree Lighting Ceremonies</h3><p>Light up the season at community and municipal events.</p></div>
+        <div class="card reveal"><div class="ic">🎬</div><h3>Commercial &amp; TV</h3><p>Professional, reliable Santa for commercial and television productions.</p></div>
+        <div class="card reveal"><div class="ic">🤶</div><h3>Mrs. Santa Available</h3><p>Mrs. Santa can join for the full North Pole experience on request.</p></div>
+        <div class="card reveal"><div class="ic">✨</div><h3>And More</h3><p>Anything where Santa would help bring the magic of the season alive.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOS -->
+  <section id="photos">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Gallery</div>
+        <h2>Moments with Santa Michael</h2>
+      </div>
+      <!-- EDIT: remove this note once real photos are added -->
+      <div class="placeholder-note reveal" style="margin-bottom:1.6rem">
+        📷 Placeholder gallery — add images to the <code>/photos</code> folder, then replace each
+        tile below with <code>&lt;div class="photo"&gt;&lt;img src="photos/your-photo.jpg" alt="..."&gt;&lt;/div&gt;</code>.
+      </div>
+      <div class="gallery reveal">
+        <div class="photo"><div class="ph"><span class="big">🎅</span>Your photo here</div></div>
+        <div class="photo"><div class="ph"><span class="big">📸</span>Your photo here</div></div>
+        <div class="photo"><div class="ph"><span class="big">🎄</span>Your photo here</div></div>
+        <div class="photo"><div class="ph"><span class="big">✨</span>Your photo here</div></div>
+        <div class="photo"><div class="ph"><span class="big">🌲</span>Your photo here</div></div>
+        <div class="photo"><div class="ph"><span class="big">🤶</span>Your photo here</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / BIO -->
+  <section id="about">
+    <div class="wrap narrow">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Meet Santa Michael</div>
+        <h2>About</h2>
+      </div>
+      <div class="about-body reveal">
+        <!-- EDIT: replace placeholder note + bio with Santa Michael's words -->
+        <div class="placeholder-note" style="margin-bottom:1.4rem">
+          ✏️ Bio coming soon — Santa Michael is writing this.
+        </div>
+        <p>Santa Michael of New Mexico is a real-bearded, professional Santa who brings warmth, patience, and genuine Christmas spirit to every appearance. Fully insured and background-checked, with documentation available on request.</p>
+        <p><em>[Full bio to be added — Santa Michael's story, experience, and what makes each visit special.]</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Kind words</div>
+        <h2>What families say</h2>
+      </div>
+      <!-- EDIT: replace with real customer quotes, then remove this note -->
+      <div class="placeholder-note reveal" style="margin-bottom:1.6rem">
+        💬 Placeholder testimonials — replace with real customer quotes once collected.
+      </div>
+      <div class="quotes reveal">
+        <div class="quote"><p>"[Customer testimonial to be added here.]"</p><div class="who">— Name, New Mexico</div></div>
+        <div class="quote"><p>"[Customer testimonial to be added here.]"</p><div class="who">— Name, New Mexico</div></div>
+        <div class="quote"><p>"[Customer testimonial to be added here.]"</p><div class="who">— Name, New Mexico</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Get in touch</div>
+        <h2>Contact Santa Michael</h2>
+        <p class="sub">Schedule a date or ask a question — Santa Michael will reply personally.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="reveal">
+          <div class="contact-line"><span>📧</span><a href="mailto:santamichael.nm@gmail.com">santamichael.nm@gmail.com</a></div>
+          <div class="contact-line"><span>📍</span><span>Serving New Mexico</span></div>
+          <div class="info-strip" style="margin-top:1.4rem">
+            <span class="ic">🛡️</span>
+            <span>Background check and proof of insurance available on request.</span>
+          </div>
+        </div>
+
+        <!-- EDIT: replace YOUR-WEB3FORMS-ACCESS-KEY (both forms) — see README -->
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="reveal">
+          <input type="hidden" name="access_key" value="c600d9ca-4794-4454-95a4-e8a1f2a8fe5d">
+          <input type="hidden" name="subject" value="New enquiry — Contact Santa Michael">
+          <input type="hidden" name="from_name" value="Santa Michael Website">
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+
+          <div class="row2">
+            <div class="field"><label for="c-name">Name</label>
+              <input id="c-name" type="text" name="name" required placeholder="Your name"></div>
+            <div class="field"><label for="c-phone">Phone number</label>
+              <input id="c-phone" type="tel" name="phone" required placeholder="(505) 123‑4567"></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="c-email">Email address</label>
+              <input id="c-email" type="email" name="email" required placeholder="you@email.com"></div>
+            <div class="field"><label for="c-date">Tentative date</label>
+              <input id="c-date" type="date" name="tentative_date"></div>
+          </div>
+          <div class="field"><label for="c-type">Type of event</label>
+            <select id="c-type" name="event_type" required>
+              <option value="" disabled selected>Choose one…</option>
+              <option>Corporate event</option>
+              <option>Private event</option>
+              <option>Home visit</option>
+              <option>Photography session</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field"><label for="c-msg">Message / questions</label>
+            <textarea id="c-msg" name="message" placeholder="Tell Santa about your event, or ask a question…"></textarea></div>
+          <button type="submit" class="btn btn-primary">Send to Santa 🎄</button>
+          <p class="form-note">Santa Michael replies personally. Your details are never shared.</p>
+          <div id="contact-msg" class="form-msg"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME VISIT FORM -->
+  <section id="home-visit">
+    <div class="wrap narrow">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Classified · North Pole Security</div>
+        <h2>North Pole Intelligence Report</h2>
+        <p class="sub">Santa's secret dossier for your child's home visit. The more intel you share, the more magical and personalized the visit — and it's all for Santa's eyes only. <strong>Please submit one report per child.</strong></p>
+      </div>
+      <!-- User-facing notice: one submission per child -->
+      <div class="info-strip reveal" style="margin-bottom:1.4rem">
+        <span class="ic">🎅</span>
+        <span><strong style="color:var(--color-text)">One report per child, please.</strong> So every child gets their own personalized visit, fill out and submit this form once for each child.</span>
+      </div>
+
+      <form id="visit-form" action="https://api.web3forms.com/submit" method="POST" class="dossier reveal">
+        <input type="hidden" name="access_key" value="67a9cb34-a2c3-4ef1-8674-9b199c063e72">
+        <input type="hidden" name="subject" value="🎅 North Pole Intelligence Report — Home Visit">
+        <input type="hidden" name="from_name" value="Santa Michael Website">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+
+        <div class="stamp" aria-hidden="true">Top<br>Secret</div>
+        <div class="classified-banner">★ North Pole Security · For Santa's Eyes Only ★</div>
+
+        <!-- ===== VISIT LOGISTICS (needed to schedule the visit) ===== -->
+        <div class="dossier-divider">Visit Logistics</div>
+        <div class="row2">
+          <div class="field"><label for="v-parent">Parent / guardian name</label>
+            <input id="v-parent" type="text" name="parent_name" required></div>
+          <div class="field"><label for="v-phone">Phone number</label>
+            <input id="v-phone" type="tel" name="phone" required></div>
+        </div>
+        <div class="field"><label for="v-email">Email address</label>
+          <input id="v-email" type="email" name="email" required></div>
+        <div class="field"><label for="v-address">Visit address</label>
+          <input id="v-address" type="text" name="address" placeholder="Street, city, ZIP" required></div>
+        <div class="row2">
+          <div class="field"><label for="v-date">Requested date</label>
+            <input id="v-date" type="date" name="requested_date" required></div>
+          <div class="field"><label for="v-time">Requested time</label>
+            <input id="v-time" type="time" name="requested_time"></div>
+        </div>
+        <div class="field"><label for="v-gifts">Gifts for Santa to hand out? Where will they be?</label>
+          <textarea id="v-gifts" name="gifts" placeholder="e.g. Yes — 2 wrapped gifts in a bag by the front door"></textarea></div>
+
+        <!-- ===== SUBJECT (the child) ===== -->
+        <div class="dossier-divider">The Subject · For Santa Only</div>
+        <div class="row2">
+          <div class="field"><label for="v-child-name">Child's name</label>
+            <input id="v-child-name" type="text" name="child_name" placeholder="One child per report" required></div>
+          <div class="field"><label for="v-child-age">Age</label>
+            <input id="v-child-age" type="text" name="child_age" inputmode="numeric" placeholder="e.g. 6" required></div>
+        </div>
+
+        <!-- ===== SIBLINGS ===== -->
+        <div class="dossier-divider">Known Associates · Siblings</div>
+        <div class="field"><label for="v-siblings">Siblings — names &amp; ages (if any)</label>
+          <textarea id="v-siblings" name="siblings" placeholder="e.g. Emma (8), Liam (5)…"></textarea></div>
+
+        <!-- ===== SCHOOL ===== -->
+        <div class="dossier-divider">School Intel</div>
+        <div class="row2">
+          <div class="field"><label for="v-grade">Grade (if applicable)</label>
+            <input id="v-grade" type="text" name="school_grade"></div>
+          <div class="field"><label for="v-teacher">Teacher's name</label>
+            <input id="v-teacher" type="text" name="teacher_name"></div>
+        </div>
+        <div class="field"><label for="v-school-notes">Anything about school Santa should know about?</label>
+          <textarea id="v-school-notes" name="school_notes"></textarea></div>
+
+        <!-- ===== CHRISTMAS ===== -->
+        <div class="dossier-divider">Christmas Intel</div>
+        <div class="field"><label for="v-elf-name">Elf on the Shelf name (if applicable)</label>
+          <input id="v-elf-name" type="text" name="elf_name"></div>
+        <div class="field"><label for="v-elf-memory">One memorable thing the Elf did this year</label>
+          <textarea id="v-elf-memory" name="elf_memory"></textarea></div>
+        <div class="field">
+          <label>Did they write Santa a letter?</label>
+          <div class="radio-row">
+            <label><input type="radio" name="wrote_letter" value="Yes"> Yes</label>
+            <label><input type="radio" name="wrote_letter" value="No"> No</label>
+          </div>
+        </div>
+        <div class="field"><label for="v-letter-asks">Did they ask for anything in their letter Santa should refer to?</label>
+          <textarea id="v-letter-asks" name="letter_requests"></textarea></div>
+        <div class="field"><label for="v-wishes">What are they hoping to get for Christmas?</label>
+          <textarea id="v-wishes" name="christmas_wishes"></textarea></div>
+
+        <!-- ===== PERSONALITY ===== -->
+        <div class="dossier-divider">Personality Profile</div>
+        <div class="field"><label for="v-goodat">What is your child good at? <span style="text-transform:none;font-weight:400;letter-spacing:0;color:var(--color-text-dim)">— hobbies, school subjects, after-school activities</span></label>
+          <textarea id="v-goodat" name="good_at"></textarea></div>
+        <div class="field"><label for="v-growup">What does your child want to be when they grow up?</label>
+          <input id="v-growup" type="text" name="grow_up"></div>
+
+        <!-- ===== FAVORITE THINGS ===== -->
+        <div class="dossier-divider">Favorite Things</div>
+        <div class="row2">
+          <div class="field"><label for="v-fav-color">Color</label>
+            <input id="v-fav-color" type="text" name="fav_color"></div>
+          <div class="field"><label for="v-fav-animal">Animal</label>
+            <input id="v-fav-animal" type="text" name="fav_animal"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="v-fav-food">Food</label>
+            <input id="v-fav-food" type="text" name="fav_food"></div>
+          <div class="field"><label for="v-fav-do">Thing to do</label>
+            <input id="v-fav-do" type="text" name="fav_activity"></div>
+        </div>
+        <div class="field"><label for="v-happiest">What makes your child happiest?</label>
+          <textarea id="v-happiest" name="happiest"></textarea></div>
+
+        <!-- ===== PARENT BRIEFING ===== -->
+        <div class="dossier-divider">Santa's Briefing · Parent Comments</div>
+        <div class="field"><label for="v-reinforce">Positive reinforcement for Santa to mention <span style="text-transform:none;font-weight:400;letter-spacing:0;color:var(--color-text-dim)">— e.g. something they're doing well at home, school, or activities</span></label>
+          <textarea id="v-reinforce" name="positive_reinforcement"></textarea></div>
+        <div class="field"><label for="v-else">Anything else you'd like Santa to know about your child?</label>
+          <textarea id="v-else" name="parent_comments"></textarea></div>
+
+        <!-- ===== CLEARANCE (photo permission + terms) ===== -->
+        <div class="dossier-divider">Clearance</div>
+        <div class="field">
+          <label>Photo permission</label>
+          <p style="font-size:.9rem;color:var(--color-text-dim);margin-bottom:.6rem">May Santa Michael use photos that include your child on this website or social media?</p>
+          <div class="radio-row">
+            <label><input type="radio" name="photo_permission" value="Yes — I give permission" required> Yes, I give permission</label>
+            <label><input type="radio" name="photo_permission" value="No — do not use photos of my child"> No, please do not</label>
+          </div>
+        </div>
+        <div class="field">
+          <label class="consent">
+            <input type="checkbox" name="terms_agreed" value="Agreed to Terms & Conditions" required>
+            <span>I have read and agree to the <a href="#terms" style="color:var(--color-accent-soft)">Terms &amp; Conditions</a>, including that deposits and booking payments are non-refundable.</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Transmit report to the North Pole 🎅</button>
+        <p class="form-note">🔒 Confidential — for Santa's eyes only. A copy is emailed to Santa Michael on submit. More than one child? Please submit a separate report for each.</p>
+        <div id="visit-msg" class="form-msg"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- TERMS -->
+  <section id="terms">
+    <div class="wrap narrow">
+      <div class="sec-head reveal">
+        <div class="eyebrow">The fine print</div>
+        <h2>Terms &amp; Conditions</h2>
+      </div>
+      <div class="panel reveal">
+        <ul class="terms-list">
+          <li>Santa Michael of New Mexico deposits and booking payments are non-refundable.</li>
+          <li>A booking deposit is required to hold your reserved date and time.</li>
+          <li>The remaining balance owed must be paid 24 hours prior to the reserved date and time.</li>
+          <li>Dates may be changed without additional charge, but may incur a change fee at the discretion of Santa Michael of New Mexico.</li>
+          <li>Please ensure a safe, welcoming environment for Santa and all guests. Santa Michael reserves the right to end a visit early if conduct is unsafe or inappropriate; in such cases payments remain non-refundable.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAYMENT -->
+  <section id="payment">
+    <div class="wrap narrow">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Payment</div>
+        <h2>Forms of payment</h2>
+        <p class="sub">Deposits and balances can be paid by PayPal or Apple Pay.</p>
+      </div>
+      <div class="panel reveal">
+        <div class="pay-row">
+          <!-- EDIT: replace YOUR-PAYPAL-LINK with the PayPal.me URL once ready -->
+          <a class="pay-btn" href="YOUR-PAYPAL-LINK" target="_blank" rel="noopener">💳 Pay with PayPal</a>
+          <span class="pay-btn"> Apple Pay accepted</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="brand">Santa&nbsp;Michael of New Mexico<span class="dot">.</span></div>
+      <div class="social">
+        <!-- EDIT: Facebook + Instagram URLs -->
+        <a href="YOUR-FACEBOOK-URL" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="YOUR-INSTAGRAM-URL" target="_blank" rel="noopener" aria-label="Instagram">◉</a>
+      </div>
+      <p>Background check &amp; proof of insurance available on request.</p>
+      <p>© <span id="year"></span> Santa Michael of New Mexico. Bringing the magic of the season to life.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

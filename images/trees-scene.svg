@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="180" viewBox="0 0 320 180" preserveAspectRatio="xMidYMax meet">
+  <!-- Repeating snowy pine ridge. Tiles horizontally (320px wide). -->
+  <!-- Back row (lighter, for depth) -->
+  <g fill="#25412f">
+    <path d="M70 76 L38 150 L102 150 Z"/>
+    <path d="M232 82 L200 150 L264 150 Z"/>
+  </g>
+  <!-- Snow drift -->
+  <path fill="#f4ece0" d="M0 134 Q40 122 80 132 Q120 142 160 128 Q200 117 240 131 Q280 142 320 128 L320 180 L0 180 Z"/>
+  <!-- Front row (darker, taller; bases tuck into the snow) -->
+  <g fill="#14241b">
+    <path d="M34 56 L2 162 L66 162 Z"/>
+    <path d="M160 46 L120 162 L200 162 Z"/>
+    <path d="M286 54 L252 162 L320 162 Z"/>
+  </g>
+  <!-- Snow caps on front pines -->
+  <g fill="#f4ece0" opacity="0.9">
+    <path d="M34 56 L23 94 Q34 86 45 94 Z"/>
+    <path d="M160 46 L148 90 Q160 82 172 90 Z"/>
+    <path d="M286 54 L275 92 Q286 84 297 92 Z"/>
+  </g>
+</svg>

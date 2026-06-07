@@ -1,0 +1,310 @@
+/* =============================================================
+   COMPONENTS — reusable UI pieces
+   Depends on: tokens.css, base.css
+   Each block is self-contained and references tokens only.
+   ============================================================= */
+
+/* -------------------------------------------------------------
+   Eyebrow / overline
+   ------------------------------------------------------------- */
+.eyebrow {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: var(--weight-semibold);
+  margin-bottom: 1.3rem;
+}
+
+/* -------------------------------------------------------------
+   Section heading block
+   ------------------------------------------------------------- */
+.sec-head { margin-bottom: 2.6rem; }
+.sec-head .eyebrow { margin-bottom: var(--space-sm); }
+.sub {
+  color: var(--color-text-dim);
+  font-size: var(--text-md);
+  margin-top: var(--space-md);
+  max-width: 620px;
+}
+
+/* -------------------------------------------------------------
+   Buttons
+   ------------------------------------------------------------- */
+.btn {
+  display: inline-flex; align-items: center; gap: var(--space-2xs);
+  padding: 0.95rem 1.9rem;
+  border-radius: var(--radius-pill);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-base);
+  text-decoration: none; cursor: pointer; border: none;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+              border-color var(--transition-fast), color var(--transition-fast);
+}
+.btn-primary {
+  background: var(--gradient-accent);
+  color: #1a0f0a;
+  box-shadow: var(--shadow-soft);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--surface-line);
+}
+.btn-ghost:hover { border-color: var(--color-accent); color: var(--color-accent-soft); }
+
+/* -------------------------------------------------------------
+   Card
+   ------------------------------------------------------------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--surface-line);
+  border-radius: var(--radius-lg);
+  padding: 1.7rem 1.5rem;
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(234, 185, 95, 0.5);
+  background: var(--surface-hover);
+}
+.card .ic { font-size: 1.7rem; margin-bottom: var(--space-sm); }
+.card h3 { margin-bottom: var(--space-2xs); }
+.card p { color: var(--color-text-dim); font-size: var(--text-sm); }
+
+/* -------------------------------------------------------------
+   Photo gallery
+   ------------------------------------------------------------- */
+.photo {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--surface-line);
+  background: linear-gradient(160deg, rgba(234, 185, 95, 0.1), rgba(214, 90, 78, 0.1));
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; position: relative;
+}
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.photo .ph { color: var(--color-text-dim); font-size: var(--text-sm); padding: var(--space-md); }
+.photo .ph .big { font-size: 1.8rem; display: block; margin-bottom: var(--space-2xs); }
+
+/* -------------------------------------------------------------
+   Placeholder note (editor reminders — remove in production)
+   ------------------------------------------------------------- */
+.placeholder-note {
+  background: rgba(234, 185, 95, 0.08);
+  border: 1px dashed rgba(234, 185, 95, 0.45);
+  border-radius: 14px;
+  padding: 1.1rem 1.3rem;
+  color: var(--color-accent-soft);
+  font-size: var(--text-sm);
+}
+
+/* -------------------------------------------------------------
+   Testimonial quote
+   ------------------------------------------------------------- */
+.quote {
+  background: var(--surface);
+  border: 1px solid var(--surface-line);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+}
+.quote p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--color-text);
+  margin-bottom: 0.9rem;
+}
+.quote .who { font-size: var(--text-sm); color: var(--color-accent); }
+
+/* -------------------------------------------------------------
+   Forms
+   ------------------------------------------------------------- */
+form {
+  background: var(--surface);
+  border: 1px solid var(--surface-line);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-panel);
+}
+.field { margin-bottom: 1.05rem; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+.row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-md); }
+
+label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+  margin-bottom: var(--space-2xs);
+}
+
+input, textarea, select {
+  width: 100%;
+  background: var(--surface-input);
+  border: 1px solid var(--surface-line);
+  border-radius: var(--radius-sm);
+  padding: 0.82rem 0.95rem;
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: var(--text-base);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23eab95f' stroke-width='2'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(234, 185, 95, 0.15);
+}
+textarea { resize: vertical; min-height: 110px; }
+
+.consent {
+  display: flex; gap: 0.7rem; align-items: flex-start;
+  font-size: var(--text-sm); color: var(--color-text-dim);
+  text-transform: none; letter-spacing: 0; font-weight: var(--weight-regular); line-height: 1.45;
+}
+.consent input { width: auto; margin-top: 0.25rem; flex: 0 0 auto; }
+
+.radio-row { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+.radio-row label {
+  display: flex; align-items: center; gap: var(--space-2xs);
+  text-transform: none; letter-spacing: 0;
+  font-weight: var(--weight-medium); color: var(--color-text);
+  font-size: 0.98rem; margin: 0;
+}
+.radio-row input { width: auto; }
+
+/* honeypot (spam trap — visually hidden) */
+.hp { position: absolute; left: -9999px; opacity: 0; }
+
+form .btn-primary {
+  width: 100%; justify-content: center;
+  margin-top: var(--space-2xs); font-size: var(--text-md);
+}
+.form-note {
+  font-size: 0.82rem; color: var(--color-text-dim);
+  text-align: center; margin-top: 0.85rem;
+}
+.form-msg {
+  display: none; padding: var(--space-md);
+  border-radius: var(--radius-sm); margin-top: var(--space-md);
+  font-size: var(--text-sm); text-align: center;
+}
+.form-msg.ok {
+  display: block;
+  background: var(--color-success-bg);
+  border: 1px solid var(--color-success-line);
+  color: var(--color-success-text);
+}
+.form-msg.err {
+  display: block;
+  background: var(--color-error-bg);
+  border: 1px solid var(--color-error-line);
+  color: var(--color-error-text);
+}
+
+/* -------------------------------------------------------------
+   Panels & info strips
+   ------------------------------------------------------------- */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--surface-line);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+}
+
+.terms-list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 0.9rem;
+  margin-top: var(--space-2xs);
+}
+.terms-list li {
+  display: flex; gap: var(--space-sm);
+  color: var(--color-text-dim); font-size: var(--text-base);
+}
+.terms-list li::before { content: "\2744"; color: var(--color-accent); flex: 0 0 auto; }
+
+.pay-row { display: flex; gap: var(--space-md); flex-wrap: wrap; margin-top: 1.2rem; }
+.pay-btn {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--surface-line);
+  color: var(--color-text);
+  text-decoration: none; font-weight: var(--weight-semibold);
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+.pay-btn:hover { border-color: var(--color-accent); color: var(--color-accent-soft); }
+
+.info-strip {
+  display: flex; gap: var(--space-md); align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--surface-line);
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1.5rem;
+  color: var(--color-text-dim); font-size: 0.98rem;
+}
+.info-strip .ic { font-size: 1.5rem; }
+
+/* -------------------------------------------------------------
+   Classified "Intelligence Report" theme (home-visit form)
+   A fun spy/dossier look layered on the standard .form styles.
+   ------------------------------------------------------------- */
+.dossier { position: relative; }
+
+/* "For Santa's Eyes Only" banner across the top of the form */
+.classified-banner {
+  font-family: var(--font-stamp);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-brand);
+  border-top: 1px dashed var(--surface-line);
+  border-bottom: 1px dashed var(--surface-line);
+  padding: 0.6rem 1.6rem;
+  margin-bottom: 1.8rem;
+}
+
+/* Rotated rubber "TOP SECRET" stamp */
+.stamp {
+  position: absolute;
+  top: 0.7rem; right: 0.9rem;
+  font-family: var(--font-stamp);
+  color: var(--color-brand);
+  border: 3px double var(--color-brand);
+  border-radius: 6px;
+  padding: 0.15rem 0.7rem;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transform: rotate(9deg);
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Section dividers within the dossier ("// SUBJECT PROFILE") */
+.dossier-divider {
+  display: flex; align-items: center; gap: 0.8rem;
+  font-family: var(--font-stamp);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  margin: 2rem 0 1.1rem;
+}
+.dossier-divider::before { content: "\25AE"; color: var(--color-brand); flex: 0 0 auto; }
+.dossier-divider::after  { content: ""; flex: 1; height: 1px; background: var(--surface-line); }
+.dossier-divider:first-of-type { margin-top: 0.5rem; }
