@@ -61,7 +61,7 @@ img { max-width: 100%; display: block; }
   position: fixed; inset: 0; z-index: var(--z-bg);
   background:
     radial-gradient(900px 600px at 78% -8%, rgba(234, 185, 95, 0.22), transparent 60%),
-    radial-gradient(700px 700px at 12% 110%, rgba(150, 28, 40, 0.55), transparent 62%),
+    radial-gradient(700px 700px at 12% 110%, rgba(193, 26, 40, 0.55), transparent 62%),
     var(--gradient-bg);
 }
 

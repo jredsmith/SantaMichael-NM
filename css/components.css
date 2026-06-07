@@ -77,16 +77,22 @@
    Photo gallery
    ------------------------------------------------------------- */
 .photo {
-  aspect-ratio: 4 / 5;
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--surface-line);
   background: linear-gradient(160deg, rgba(234, 185, 95, 0.1), rgba(214, 90, 78, 0.1));
-  display: flex; align-items: center; justify-content: center;
-  text-align: center; position: relative;
+  break-inside: avoid;          /* don't split a photo across masonry columns */
+  margin-bottom: 1rem;          /* vertical gap (column-gap handles horizontal) */
+  line-height: 0;               /* remove inline whitespace under the image */
+  position: relative;
 }
-.photo img { width: 100%; height: 100%; object-fit: cover; }
-.photo .ph { color: var(--color-text-dim); font-size: var(--text-sm); padding: var(--space-md); }
+.photo img {
+  width: 100%; height: auto; display: block;
+  transition: transform 0.4s var(--ease);
+}
+.photo:hover img { transform: scale(1.04); }
+/* placeholder fallback (used before real photos are added) */
+.photo .ph { color: var(--color-text-dim); font-size: var(--text-sm); padding: var(--space-md); line-height: 1.4; }
 .photo .ph .big { font-size: 1.8rem; display: block; margin-bottom: var(--space-2xs); }
 
 /* -------------------------------------------------------------

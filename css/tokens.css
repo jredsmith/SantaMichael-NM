@@ -18,7 +18,7 @@
      --------------------------------------------------------- */
   --c-night-900: #14070a;
   --c-night-700: #3d101a;
-  --c-wine-700:  #961c28;   /* deep festive red used in bg glow */
+  --c-wine-700:  #c2182b;   /* deep festive red used in bg glow */
 
   --c-cream-100: #f4ece0;
   --c-gold-400:  #eab95f;
@@ -59,7 +59,7 @@
 
   /* gradients */
   --gradient-accent:     linear-gradient(135deg, var(--color-accent), var(--color-brand));
-  --gradient-bg:         linear-gradient(160deg, #14070a 0%, #3d101a 55%, #14070a 100%);
+  --gradient-bg:         linear-gradient(160deg, #160608 0%, #5e0f17 52%, #160608 100%);
 
   /* scenery (decorative background: sleigh + forest) */
   --color-forest:      #14241b;   /* front pines (dark) */

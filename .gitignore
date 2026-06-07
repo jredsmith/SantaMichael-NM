@@ -16,3 +16,11 @@ dist/
 #  to commit. If you later add a server/.env with private keys, keep it out:)
 .env
 .env.*
+
+# Photos: keep full-res originals + videos LOCAL only (they're ~158 MB).
+# Commit just the optimized web/ copies the site actually uses.
+photos/*
+!photos/web/
+!photos/README.md
+*.MOV
+*.mov
