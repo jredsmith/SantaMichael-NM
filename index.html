@@ -21,10 +21,10 @@
 
   <!-- Stylesheets — ORDER MATTERS: tokens first.
        Bump the ?v= number whenever CSS changes, to bust browser caches. -->
-  <link rel="stylesheet" href="css/tokens.css?v=3">
-  <link rel="stylesheet" href="css/base.css?v=3">
-  <link rel="stylesheet" href="css/components.css?v=3">
-  <link rel="stylesheet" href="css/layout.css?v=3">
+  <link rel="stylesheet" href="css/tokens.css?v=4">
+  <link rel="stylesheet" href="css/base.css?v=4">
+  <link rel="stylesheet" href="css/components.css?v=4">
+  <link rel="stylesheet" href="css/layout.css?v=4">
 </head>
 <body>
   <div class="bg"></div>
@@ -85,7 +85,10 @@
   <nav>
     <div class="wrap nav-in">
       <div class="brand">Santa&nbsp;Michael<span class="dot">.</span></div>
-      <div class="nav-links">
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
         <a href="#services">Services</a>
         <a href="#photos">Photos</a>
         <a href="#about">About</a>
@@ -451,6 +454,6 @@
 
   <button id="to-top" class="to-top" aria-label="Back to top" title="Back to top">↑</button>
 
-  <script src="js/main.js?v=3"></script>
+  <script src="js/main.js?v=4"></script>
 </body>
 </html>

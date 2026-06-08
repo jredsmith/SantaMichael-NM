@@ -27,8 +27,43 @@ nav {
 .nav-links a { color: var(--color-text-dim); text-decoration: none; transition: color var(--transition-fast); }
 .nav-links a:hover { color: var(--color-accent-soft); }
 
+/* Hamburger toggle — hidden on desktop, shown on mobile */
+.nav-toggle { display: none; background: transparent; cursor: pointer; }
+
 @media (max-width: 880px) {
-  .nav-links { display: none; }
+  .nav-toggle {
+    display: inline-flex; flex-direction: column; justify-content: center; gap: 5px;
+    width: 44px; height: 40px; padding: 0 9px;
+    border: 1px solid var(--surface-line); border-radius: var(--radius-sm);
+  }
+  .nav-toggle span {
+    display: block; height: 2px; width: 100%; border-radius: 2px;
+    background: var(--color-text);
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+  }
+  /* animate bars into an X when open */
+  nav.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+  nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* links become a full-width dropdown panel */
+  .nav-links {
+    display: flex; flex-direction: column; gap: 0;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: rgba(20, 7, 10, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--surface-line);
+    max-height: 0; overflow: hidden;
+    opacity: 0; visibility: hidden; transform: translateY(-6px);
+    transition: max-height var(--transition), opacity var(--transition),
+                transform var(--transition), visibility var(--transition);
+  }
+  nav.open .nav-links { max-height: 80vh; opacity: 1; visibility: visible; transform: none; }
+  .nav-links a {
+    padding: 0.9rem var(--gutter);
+    font-size: 1rem;
+    border-top: 1px solid var(--surface-line);
+  }
 }
 
 /* -------------------------------------------------------------

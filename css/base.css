@@ -126,6 +126,11 @@ canvas#snow { position: fixed; inset: 0; z-index: var(--z-fx); pointer-events: n
 
 section { padding: var(--section-pad) 0; position: relative; }
 
+/* tighten vertical rhythm on phones */
+@media (max-width: 560px) {
+  :root { --section-pad: 3.4rem; }
+}
+
 /* Scroll-reveal animation */
 .reveal {
   opacity: 0;

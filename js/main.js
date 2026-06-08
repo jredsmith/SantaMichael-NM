@@ -27,6 +27,25 @@
   );
   document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
+  /* ---- Mobile menu (hamburger) -------------------------------------- */
+  const navToggle = document.getElementById("nav-toggle");
+  const navEl = document.querySelector("nav");
+  if (navToggle && navEl) {
+    const setOpen = (open) => {
+      navEl.classList.toggle("open", open);
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+    navToggle.addEventListener("click", () => setOpen(!navEl.classList.contains("open")));
+    // close after tapping a link
+    navEl.querySelectorAll(".nav-links a").forEach((a) =>
+      a.addEventListener("click", () => setOpen(false))
+    );
+    // close on Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") setOpen(false);
+    });
+  }
+
   /* ---- Back-to-top button ------------------------------------------- */
   const toTop = document.getElementById("to-top");
   if (toTop) {
