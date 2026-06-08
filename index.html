@@ -19,11 +19,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Special+Elite&display=swap" rel="stylesheet">
 
-  <!-- Stylesheets — ORDER MATTERS: tokens first -->
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/layout.css">
+  <!-- Stylesheets — ORDER MATTERS: tokens first.
+       Bump the ?v= number whenever CSS changes, to bust browser caches. -->
+  <link rel="stylesheet" href="css/tokens.css?v=3">
+  <link rel="stylesheet" href="css/base.css?v=3">
+  <link rel="stylesheet" href="css/components.css?v=3">
+  <link rel="stylesheet" href="css/layout.css?v=3">
 </head>
 <body>
   <div class="bg"></div>
@@ -448,6 +449,8 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <button id="to-top" class="to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>

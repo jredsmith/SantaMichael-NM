@@ -27,6 +27,17 @@
   );
   document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
+  /* ---- Back-to-top button ------------------------------------------- */
+  const toTop = document.getElementById("to-top");
+  if (toTop) {
+    const onScroll = () => toTop.classList.toggle("show", window.scrollY > 400);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    toTop.addEventListener("click", () =>
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    );
+  }
+
   /* ---- Form submission (Web3Forms AJAX) ----------------------------- */
   function wireForm(formId, msgId, successText) {
     const form = document.getElementById(formId);

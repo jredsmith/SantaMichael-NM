@@ -263,6 +263,27 @@ form .btn-primary {
 .info-strip .ic { font-size: 1.5rem; }
 
 /* -------------------------------------------------------------
+   Back-to-top button (appears after scrolling down)
+   ------------------------------------------------------------- */
+.to-top {
+  position: fixed;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  width: 48px; height: 48px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: none; border-radius: var(--radius-pill);
+  background: var(--gradient-accent);
+  color: #1a0f0a;
+  font-size: 1.4rem; line-height: 1; cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  opacity: 0; visibility: hidden; transform: translateY(12px);
+  transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+  z-index: 60;
+}
+.to-top.show { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+
+/* -------------------------------------------------------------
    Classified "Intelligence Report" theme (home-visit form)
    A fun spy/dossier look layered on the standard .form styles.
    ------------------------------------------------------------- */
