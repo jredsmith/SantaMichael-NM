@@ -284,6 +284,35 @@ form .btn-primary {
 .to-top:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
 
 /* -------------------------------------------------------------
+   Video card — links out to the commercial (Facebook)
+   (Facebook reels don't embed reliably, so we link instead.)
+   ------------------------------------------------------------- */
+.video-card {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.9rem;
+  max-width: 760px; margin: 0 auto; min-height: 220px;
+  padding: 2.4rem 1.5rem; text-align: center; text-decoration: none;
+  color: var(--color-text);
+  border: 1px solid var(--surface-line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, rgba(234, 185, 95, 0.12), rgba(214, 90, 78, 0.14));
+  box-shadow: var(--shadow-panel);
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+.video-card:hover { transform: translateY(-4px); border-color: rgba(234, 185, 95, 0.5); }
+.video-card .play {
+  width: 70px; height: 70px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.7rem; color: #1a0f0a;
+  background: var(--gradient-accent);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition);
+}
+.video-card:hover .play { transform: scale(1.06); }
+.video-card .label { font-family: var(--font-display); font-size: var(--text-lg); }
+.video-card .sub-label { font-size: var(--text-sm); color: var(--color-text-dim); }
+
+/* -------------------------------------------------------------
    Classified "Intelligence Report" theme (home-visit form)
    A fun spy/dossier look layered on the standard .form styles.
    ------------------------------------------------------------- */
