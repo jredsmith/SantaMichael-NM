@@ -115,15 +115,31 @@
   border: 1px solid var(--surface-line);
   border-radius: var(--radius-lg);
   padding: 1.6rem;
+  break-inside: avoid;          /* keep each card whole in the masonry */
+  margin-bottom: 1.1rem;
+}
+.quote .stars {
+  color: var(--color-accent);
+  letter-spacing: 0.14em;
+  font-size: 0.95rem;
+  margin-bottom: 0.55rem;
+}
+.quote .quote-title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-lg);
+  color: var(--color-accent-soft);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
 }
 .quote p {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: var(--text-lg);
   color: var(--color-text);
+  font-size: var(--text-base);
+  line-height: 1.55;
   margin-bottom: 0.9rem;
 }
-.quote .who { font-size: var(--text-sm); color: var(--color-accent); }
+.quote .who-name { display: block; color: var(--color-accent); font-weight: var(--weight-semibold); font-size: var(--text-sm); }
+.quote .who-meta { display: block; color: var(--color-text-dim); font-size: var(--text-xs); margin-top: 0.15rem; }
 
 /* -------------------------------------------------------------
    Forms
