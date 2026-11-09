@@ -18,7 +18,7 @@ santa-michael-nm/
 │   ├── components.css  # buttons, cards, forms, panels
 │   └── layout.css      # nav, hero, grids, contact, footer
 ├── js/
-│   ├── main.js         # year, scroll reveal, form submit, snow
+│   ├── main.js         # year, scroll reveal, form submit, photo gallery, snow
 │   └── calendar.js     # appearances calendar — schedule data + month grid
 ├── photos/             # gallery images
 ├── DESIGN-SYSTEM.md    # token reference + how to extend
@@ -51,6 +51,16 @@ The "Where to find Santa Michael" calendar is driven by two lists at the top of
 The calendar shows only the months that have events and opens on today's date
 or the next upcoming one. After editing, bump `calendar.js?v=` at the bottom of
 `index.html` so browsers pick up the change.
+
+## Updating the photo gallery
+
+Each photo is one line inside `<div id="gallery">` in `index.html`. The page
+shows the **first six** lines and keeps the rest behind the "Show all" button,
+so to change which six lead, move their lines to the top. Tapping a photo opens
+the file named in that line's `href` in the full-screen viewer.
+
+To add a photo, save it in `photos/web/` (800px wide is plenty), copy a line,
+and change the file name in both `href` and `src`, plus `width`/`height`.
 
 ## ✅ Things to fill in before going live
 

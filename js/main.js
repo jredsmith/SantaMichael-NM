@@ -3,6 +3,7 @@
    - current year in footer
    - scroll-reveal animations
    - AJAX form submission (Web3Forms)
+   - photo gallery: "Show all" button + tap-to-enlarge viewer
    - decorative snow canvas
    ============================================================= */
 
@@ -115,6 +116,97 @@
     "visit-msg",
     "🎅 Report received — transmitted securely to the North Pole. Santa Michael will confirm your visit soon."
   );
+
+  /* ---- Photo gallery: "Show all" + tap to enlarge ------------------- */
+  const gallery = document.getElementById("gallery");
+  if (gallery) {
+    const photos = Array.from(gallery.querySelectorAll("a.photo"));
+    // How many photos show before "Show all" is pressed. The hiding itself is
+    // done in css/components.css (.photo:nth-child(n+7)) — keep the two in step.
+    const SHORT = 6;
+
+    const more = document.getElementById("gallery-more");
+    const moreBtn = more && more.querySelector("button");
+    if (moreBtn && photos.length > SHORT) {
+      moreBtn.textContent = "Show all " + photos.length + " photos";
+      moreBtn.addEventListener("click", () => {
+        gallery.classList.add("is-open");
+        more.remove();
+        // carry on from the first photo that has just appeared
+        photos[SHORT].focus({ preventScroll: true });
+      });
+    } else {
+      // nothing to hold back (or no button to bring it back with)
+      gallery.classList.add("is-open");
+      if (more) more.remove();
+    }
+
+    // Tap to enlarge. Each photo is a link to its picture file; where the
+    // browser has <dialog>, open that file in the viewer instead. Where it
+    // doesn't, the link simply opens the picture.
+    const box = document.getElementById("lightbox");
+    if (box && typeof box.showModal === "function") {
+      const img = box.querySelector(".lightbox-img");
+      const count = box.querySelector(".lightbox-count");
+      let shown = [];   // the photos on show when the viewer was opened
+      let at = 0;       // which of them is up
+
+      // step past either end and it wraps round
+      const show = (i) => {
+        at = (i + shown.length) % shown.length;
+        const thumb = shown[at].querySelector("img");
+        img.src = shown[at].href;
+        img.alt = thumb ? thumb.alt : "";
+        count.textContent = at + 1 + " / " + shown.length;
+      };
+
+      gallery.addEventListener("click", (e) => {
+        const link = e.target.closest("a.photo");
+        if (!link) return;
+        // leave "open in a new tab" clicks to the browser
+        if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+        shown = gallery.classList.contains("is-open") ? photos : photos.slice(0, SHORT);
+        show(Math.max(0, shown.indexOf(link)));
+        box.showModal();
+        document.documentElement.classList.add("lightbox-open");
+      });
+
+      box.querySelector(".lightbox-close").addEventListener("click", () => box.close());
+      box.querySelector(".lightbox-prev").addEventListener("click", () => show(at - 1));
+      box.querySelector(".lightbox-next").addEventListener("click", () => show(at + 1));
+      // a tap on the dark surround (not the photo or a button) closes it
+      box.addEventListener("click", (e) => {
+        if (e.target === box) box.close();
+      });
+      // Escape closes a <dialog> on its own; the arrow keys step through
+      box.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") show(at - 1);
+        else if (e.key === "ArrowRight") show(at + 1);
+      });
+      box.addEventListener("close", () => {
+        document.documentElement.classList.remove("lightbox-open");
+        img.removeAttribute("src");
+      });
+
+      // swipe left / right to step through (same feel as the calendar)
+      let startX = null, startY = 0;
+      box.addEventListener("touchstart", (e) => {
+        // one finger only, and not while pinched in to look closer
+        const zoomed = window.visualViewport && window.visualViewport.scale > 1.01;
+        if (e.touches.length !== 1 || zoomed) { startX = null; return; }
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+      }, { passive: true });
+      box.addEventListener("touchend", (e) => {
+        if (startX === null) return;
+        const dx = e.changedTouches[0].clientX - startX;
+        const dy = e.changedTouches[0].clientY - startY;
+        startX = null;
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) show(dx < 0 ? at + 1 : at - 1);
+      }, { passive: true });
+    }
+  }
 
   /* ---- Decorative snow ---------------------------------------------- */
   const canvas = document.getElementById("snow");

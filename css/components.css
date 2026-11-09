@@ -97,6 +97,7 @@
    Photo gallery
    ------------------------------------------------------------- */
 .photo {
+  display: block;               /* each photo is a link to its picture file */
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--surface-line);
@@ -105,15 +106,81 @@
   margin-bottom: 1rem;          /* vertical gap (column-gap handles horizontal) */
   line-height: 0;               /* remove inline whitespace under the image */
   position: relative;
+  cursor: zoom-in;
 }
 .photo img {
   width: 100%; height: auto; display: block;
   transition: transform 0.4s var(--ease);
 }
 .photo:hover img { transform: scale(1.04); }
+.photo:focus-visible { outline: 2px solid var(--color-accent-soft); outline-offset: 2px; }
 /* placeholder fallback (used before real photos are added) */
 .photo .ph { color: var(--color-text-dim); font-size: var(--text-sm); padding: var(--space-md); line-height: 1.4; }
 .photo .ph .big { font-size: 1.8rem; display: block; margin-bottom: var(--space-2xs); }
+
+/* Short gallery — only the first six photos show until "Show all" is pressed
+   (js/main.js then adds .is-open). With scripts off, <html> keeps "no-js":
+   every photo shows and the button, which could do nothing, is left out.
+   The 7 here is "six, plus one" — keep it in step with SHORT in js/main.js. */
+html:not(.no-js) .gallery:not(.is-open) .photo:nth-child(n+7) { display: none; }
+.gallery-more { display: flex; justify-content: center; margin-top: var(--space-md); }
+.no-js .gallery-more { display: none; }
+
+/* -------------------------------------------------------------
+   Photo viewer — one gallery photo enlarged, over the whole page.
+   A <dialog> at the foot of index.html; js/main.js opens it.
+   ------------------------------------------------------------- */
+.lightbox {
+  position: fixed; inset: 0;
+  width: 100%; height: 100%; max-width: none; max-height: none;
+  margin: 0; border: none;
+  padding: 4.25rem var(--gutter) var(--space-lg);
+  background: rgba(20, 7, 10, 0.95);          /* the nav's night colour */
+  color: var(--color-text);
+  overflow: hidden;
+}
+/* only while open — a display value here would un-hide the closed dialog */
+.lightbox[open] {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: var(--space-md);
+  animation: lightbox-in 0.2s var(--ease);
+}
+.lightbox::backdrop { background: transparent; }   /* the dialog itself covers the page */
+@keyframes lightbox-in { from { opacity: 0; } }
+
+.lightbox-img {
+  flex: 0 0 auto;
+  width: auto; height: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 10.5rem);           /* room for the buttons above and below */
+  max-height: calc(100dvh - 10.5rem);
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-panel);
+}
+.lightbox-bar { flex: 0 0 auto; display: flex; align-items: center; gap: var(--space-lg); }
+.lightbox-count {
+  min-width: 4.5rem; text-align: center;
+  font-size: var(--text-sm); color: var(--color-text-dim);
+  font-variant-numeric: tabular-nums;
+}
+.lightbox-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; flex: 0 0 auto;
+  border-radius: 50%;
+  border: 1px solid var(--surface-line);
+  background: var(--surface); color: var(--color-text);
+  font-size: var(--text-base); cursor: pointer;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+.lightbox-btn:hover { border-color: var(--color-accent); color: var(--color-accent-soft); }
+.lightbox-btn:focus-visible { outline: 2px solid var(--color-accent-soft); outline-offset: 2px; }
+.lightbox-close {
+  position: absolute;
+  top: var(--space-md); right: var(--space-md);
+}
+/* keep the page behind from scrolling while the viewer is open */
+html.lightbox-open { overflow: hidden; }
 
 /* -------------------------------------------------------------
    Placeholder note (editor reminders — remove in production)

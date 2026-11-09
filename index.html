@@ -29,10 +29,10 @@
 
   <!-- Stylesheets — ORDER MATTERS: tokens first.
        Bump the ?v= number whenever CSS changes, to bust browser caches. -->
-  <link rel="stylesheet" href="css/tokens.css?v=8">
-  <link rel="stylesheet" href="css/base.css?v=8">
-  <link rel="stylesheet" href="css/components.css?v=8">
-  <link rel="stylesheet" href="css/layout.css?v=8">
+  <link rel="stylesheet" href="css/tokens.css?v=9">
+  <link rel="stylesheet" href="css/base.css?v=9">
+  <link rel="stylesheet" href="css/components.css?v=9">
+  <link rel="stylesheet" href="css/layout.css?v=9">
 
   <!-- Scripts are running, so sections may start hidden and fade in on scroll.
        While <html> still has "no-js", base.css shows everything straight away. -->
@@ -158,6 +158,15 @@
     <symbol id="i-play" viewBox="0 0 24 24">
       <path d="M7 3l14 9-14 9z"/>
     </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </symbol>
+    <symbol id="i-prev" viewBox="0 0 24 24">
+      <path d="M15 5l-7 7 7 7"/>
+    </symbol>
+    <symbol id="i-next" viewBox="0 0 24 24">
+      <path d="M9 5l7 7-7 7"/>
+    </symbol>
   </svg>
 
   <nav>
@@ -247,41 +256,48 @@
         <div class="eyebrow">Gallery</div>
         <h2>Moments with Santa Michael</h2>
       </div>
-      <div class="gallery reveal">
-        <div class="photo"><img src="photos/web/IMG_4098.jpg" width="800" height="1066" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4099.jpg" width="800" height="1066" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4100.jpg" width="800" height="992" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4101.jpg" width="800" height="1422" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4102.jpg" width="800" height="534" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4103.jpg" width="800" height="534" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4104.jpg" width="800" height="1198" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4105.jpg" width="800" height="997" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4106.jpg" width="800" height="1199" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4107.jpg" width="800" height="1199" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4108.jpg" width="800" height="1066" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4109.jpg" width="800" height="1066" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4110.jpg" width="800" height="533" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4111.jpg" width="800" height="1013" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4112.jpg" width="800" height="533" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4113.jpg" width="800" height="598" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4114.jpg" width="800" height="1066" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4115.jpg" width="800" height="801" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4116.jpg" width="800" height="1422" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4117.jpg" width="800" height="1500" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4118.jpg" width="759" height="1600" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4120.jpg" width="800" height="999" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4121.jpg" width="800" height="765" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4122.jpg" width="800" height="1120" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4123.jpg" width="800" height="1199" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4124.jpg" width="800" height="1120" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4125.jpg" width="800" height="1121" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4127.jpg" width="800" height="804" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4128.jpg" width="800" height="865" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4129.jpg" width="800" height="572" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4130.jpg" width="800" height="1120" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4131.jpg" width="800" height="532" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4132.jpg" width="800" height="572" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
-        <div class="photo"><img src="photos/web/IMG_4133.jpg" width="800" height="534" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+      <!-- Only the first six photos show until "Show all" is pressed (the rest
+           are hidden by css/components.css, and shown again if scripts are off).
+           To change which six, reorder the lines. Each photo links to its own
+           picture file; js/main.js opens it in the viewer at the foot of the page. -->
+      <div id="gallery" class="gallery reveal">
+        <a class="photo" href="photos/web/IMG_4098.jpg"><img src="photos/web/IMG_4098.jpg" width="800" height="1066" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4099.jpg"><img src="photos/web/IMG_4099.jpg" width="800" height="1066" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4100.jpg"><img src="photos/web/IMG_4100.jpg" width="800" height="992" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4101.jpg"><img src="photos/web/IMG_4101.jpg" width="800" height="1422" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4102.jpg"><img src="photos/web/IMG_4102.jpg" width="800" height="534" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4103.jpg"><img src="photos/web/IMG_4103.jpg" width="800" height="534" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4104.jpg"><img src="photos/web/IMG_4104.jpg" width="800" height="1198" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4105.jpg"><img src="photos/web/IMG_4105.jpg" width="800" height="997" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4106.jpg"><img src="photos/web/IMG_4106.jpg" width="800" height="1199" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4107.jpg"><img src="photos/web/IMG_4107.jpg" width="800" height="1199" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4108.jpg"><img src="photos/web/IMG_4108.jpg" width="800" height="1066" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4109.jpg"><img src="photos/web/IMG_4109.jpg" width="800" height="1066" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4110.jpg"><img src="photos/web/IMG_4110.jpg" width="800" height="533" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4111.jpg"><img src="photos/web/IMG_4111.jpg" width="800" height="1013" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4112.jpg"><img src="photos/web/IMG_4112.jpg" width="800" height="533" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4113.jpg"><img src="photos/web/IMG_4113.jpg" width="800" height="598" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4114.jpg"><img src="photos/web/IMG_4114.jpg" width="800" height="1066" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4115.jpg"><img src="photos/web/IMG_4115.jpg" width="800" height="801" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4116.jpg"><img src="photos/web/IMG_4116.jpg" width="800" height="1422" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4117.jpg"><img src="photos/web/IMG_4117.jpg" width="800" height="1500" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4118.jpg"><img src="photos/web/IMG_4118.jpg" width="759" height="1600" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4120.jpg"><img src="photos/web/IMG_4120.jpg" width="800" height="999" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4121.jpg"><img src="photos/web/IMG_4121.jpg" width="800" height="765" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4122.jpg"><img src="photos/web/IMG_4122.jpg" width="800" height="1120" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4123.jpg"><img src="photos/web/IMG_4123.jpg" width="800" height="1199" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4124.jpg"><img src="photos/web/IMG_4124.jpg" width="800" height="1120" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4125.jpg"><img src="photos/web/IMG_4125.jpg" width="800" height="1121" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4127.jpg"><img src="photos/web/IMG_4127.jpg" width="800" height="804" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4128.jpg"><img src="photos/web/IMG_4128.jpg" width="800" height="865" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4129.jpg"><img src="photos/web/IMG_4129.jpg" width="800" height="572" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4130.jpg"><img src="photos/web/IMG_4130.jpg" width="800" height="1120" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4131.jpg"><img src="photos/web/IMG_4131.jpg" width="800" height="532" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4132.jpg"><img src="photos/web/IMG_4132.jpg" width="800" height="572" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+        <a class="photo" href="photos/web/IMG_4133.jpg"><img src="photos/web/IMG_4133.jpg" width="800" height="534" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></a>
+      </div>
+      <div id="gallery-more" class="gallery-more">
+        <button type="button" class="btn btn-ghost">Show all photos</button>
       </div>
     </div>
   </section>
@@ -642,8 +658,19 @@
 
   <button id="to-top" class="to-top" aria-label="Back to top" title="Back to top">↑</button>
 
+  <!-- PHOTO VIEWER — one gallery photo, enlarged. Opened and filled by js/main.js. -->
+  <dialog id="lightbox" class="lightbox" aria-label="Photo viewer">
+    <button type="button" class="lightbox-btn lightbox-close" aria-label="Close photo viewer"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <img class="lightbox-img" alt="">
+    <div class="lightbox-bar">
+      <button type="button" class="lightbox-btn lightbox-prev" aria-label="Previous photo"><svg class="icon" aria-hidden="true"><use href="#i-prev"/></svg></button>
+      <span class="lightbox-count" aria-live="polite"></span>
+      <button type="button" class="lightbox-btn lightbox-next" aria-label="Next photo"><svg class="icon" aria-hidden="true"><use href="#i-next"/></svg></button>
+    </div>
+  </dialog>
+
   <!-- If main.js can't load, put "no-js" back so nothing stays hidden. -->
-  <script src="js/main.js?v=8" onerror="document.documentElement.classList.add('no-js')"></script>
+  <script src="js/main.js?v=9" onerror="document.documentElement.classList.add('no-js')"></script>
   <script src="js/calendar.js?v=1"></script>
 </body>
 </html>
