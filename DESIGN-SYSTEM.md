@@ -72,6 +72,16 @@ blue "winter night" theme:
 }
 ```
 
+**Use an icon** — icons are line drawings kept in one hidden
+`<svg class="sprite">` near the top of `index.html`. They take the surrounding
+text colour and scale with `font-size`:
+```html
+<svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg>
+```
+To add one, put a new `<symbol id="i-name" viewBox="0 0 24 24">` in the sprite,
+drawn as strokes on a 24×24 grid (no fills). Don't use emoji as icons — they
+look different on every device.
+
 **Add a token** — define it in `tokens.css` (primitive if it's a new raw value,
 semantic if it's a new role), then reference it. Document it in the table above.
 

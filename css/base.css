@@ -138,3 +138,8 @@ section { padding: var(--section-pad) 0; position: relative; }
   transition: opacity var(--transition-slow), transform var(--transition-slow);
 }
 .reveal.in { opacity: 1; transform: none; }
+
+/* Without scripts nothing would ever add .in, so show everything up front.
+   <html> carries "no-js" until the one-line script in <head> removes it, and
+   gets it back if js/main.js fails to load. */
+.no-js .reveal { opacity: 1; transform: none; }

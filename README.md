@@ -61,13 +61,14 @@ Search the project for `EDIT:` and `YOUR-` to find every placeholder.
 - [x] **Phone number** — none posted (intentionally removed from the public
       contact section). Re-add a `tel:` contact-line in `index.html` if that changes.
 - [x] **Apple Pay** — shown as "accepted" with no destination posted.
-- [ ] **PayPal link** — replace `YOUR-PAYPAL-LINK` with the PayPal.me URL (in progress).
+- [x] **PayPal link** — `https://paypal.me/michaelbriggs614`.
 - [ ] **Social links** — replace `YOUR-FACEBOOK-URL`, `YOUR-INSTAGRAM-URL`.
 - [ ] **Photos** — add images to `/photos`, swap the placeholder gallery tiles.
 - [ ] **About bio** — replace the placeholder text in the About section.
 - [ ] **Testimonials** — replace placeholder quotes with real ones.
 - [ ] **Home-visit form** — confirm fields match the OneDrive form.
-- [ ] **Open Graph URL/image** — uncomment + set in `<head>` once hosted.
+- [x] **Open Graph URL/image** — set in `<head>`; the share picture is
+      `images/share.jpg` (1200×630).
 - [ ] Remove the dashed `.placeholder-note` blocks once content is real.
 
 ## Deploy

@@ -14,18 +14,27 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* ---- Scroll reveal ------------------------------------------------ */
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("in");
-          io.unobserve(e.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
-  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  const reveals = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    // Reveal as soon as any part of the element is a little way (8%) above the
+    // bottom of the screen. A "share of the element visible" threshold would
+    // never be met by something much taller than the screen — the photo
+    // gallery on a phone, for one — and it would stay hidden.
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("in");
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0, rootMargin: "0px 0px -8% 0px" }
+    );
+    reveals.forEach((el) => io.observe(el));
+  } else {
+    reveals.forEach((el) => el.classList.add("in"));
+  }
 
   /* ---- Mobile menu (hamburger) -------------------------------------- */
   const navToggle = document.getElementById("nav-toggle");

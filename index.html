@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +10,12 @@
   <meta property="og:title" content="Santa Michael of New Mexico">
   <meta property="og:description" content="A real-bearded, insured, background-checked Santa for events across New Mexico.">
   <meta property="og:type" content="website">
-  <!-- EDIT: set to your live URL + a share image once hosted
-  <meta property="og:url" content="https://your-domain.com">
-  <meta property="og:image" content="https://your-domain.com/photos/og-image.jpg"> -->
+  <meta property="og:url" content="https://santamichaelnm.com/">
+  <meta property="og:image" content="https://santamichaelnm.com/images/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Santa Michael waving in front of a decorated Christmas tree">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Tab icon — cropped from photos/web/portrait-circle.jpg -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
@@ -26,10 +29,14 @@
 
   <!-- Stylesheets — ORDER MATTERS: tokens first.
        Bump the ?v= number whenever CSS changes, to bust browser caches. -->
-  <link rel="stylesheet" href="css/tokens.css?v=7">
-  <link rel="stylesheet" href="css/base.css?v=7">
-  <link rel="stylesheet" href="css/components.css?v=7">
-  <link rel="stylesheet" href="css/layout.css?v=7">
+  <link rel="stylesheet" href="css/tokens.css?v=8">
+  <link rel="stylesheet" href="css/base.css?v=8">
+  <link rel="stylesheet" href="css/components.css?v=8">
+  <link rel="stylesheet" href="css/layout.css?v=8">
+
+  <!-- Scripts are running, so sections may start hidden and fade in on scroll.
+       While <html> still has "no-js", base.css shows everything straight away. -->
+  <script>document.documentElement.classList.remove("no-js");</script>
 </head>
 <body>
   <div class="bg"></div>
@@ -87,9 +94,75 @@
   <div class="grain"></div>
   <canvas id="snow"></canvas>
 
+  <!-- ICONS — one set of line icons, drawn on a 24×24 grid.
+       Use one with: <svg class="icon" aria-hidden="true"><use href="#i-name"/></svg> -->
+  <svg class="sprite" width="0" height="0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-briefcase" viewBox="0 0 24 24">
+      <rect x="2" y="7" width="20" height="14" rx="2"/>
+      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+    </symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24">
+      <path d="M20 12v10H4V12"/>
+      <rect x="2" y="7" width="20" height="5"/>
+      <path d="M12 22V7"/>
+      <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+      <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+    </symbol>
+    <symbol id="i-home" viewBox="0 0 24 24">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+      <path d="M9 22V12h6v10"/>
+    </symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24">
+      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+      <circle cx="12" cy="13" r="4"/>
+    </symbol>
+    <symbol id="i-tree" viewBox="0 0 24 24">
+      <path d="M12 3L7 9h2.5L5 15h3l-4 5h16l-4-5h3l-4.5-6H17z"/>
+      <path d="M12 20v2.5"/>
+    </symbol>
+    <symbol id="i-film" viewBox="0 0 24 24">
+      <rect x="2" y="2" width="20" height="20" rx="2"/>
+      <path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 17h5M17 7h5"/>
+    </symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24">
+      <path d="M12 3l2 7 7 2-7 2-2 7-2-7-7-2 7-2z"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24">
+      <rect x="2" y="4" width="20" height="16" rx="2"/>
+      <path d="M22 6l-10 7L2 6"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      <path d="M9 12l2 2 4-4"/>
+    </symbol>
+    <symbol id="i-file" viewBox="0 0 24 24">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+      <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+    </symbol>
+    <symbol id="i-card" viewBox="0 0 24 24">
+      <rect x="1" y="4" width="22" height="16" rx="2"/>
+      <path d="M1 10h22"/>
+    </symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    </symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24">
+      <rect x="2" y="2" width="20" height="20" rx="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M17.5 6.5h.01"/>
+    </symbol>
+    <symbol id="i-play" viewBox="0 0 24 24">
+      <path d="M7 3l14 9-14 9z"/>
+    </symbol>
+  </svg>
+
   <nav>
     <div class="wrap nav-in">
-      <div class="brand">Santa&nbsp;Michael<span class="dot">.</span></div>
+      <a class="brand" href="#top" aria-label="Santa Michael — back to top">Santa&nbsp;Michael<span class="dot">.</span></a>
       <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
         <span></span><span></span><span></span>
       </button>
@@ -99,9 +172,7 @@
         <a href="#photos">Photos</a>
         <a href="#video">Watch</a>
         <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="#home-visit">Home Visit Form</a>
-        <a href="#terms">Terms</a>
+        <a href="#contact" class="nav-cta">Book Santa</a>
       </div>
     </div>
   </nav>
@@ -117,12 +188,6 @@
       <div class="cta-row">
         <a href="#contact" class="btn btn-primary">Contact Santa Michael →</a>
         <a href="#calendar" class="btn btn-ghost">Find Santa near you</a>
-        <a href="#services" class="btn btn-ghost">See services</a>
-      </div>
-      <div class="trust">
-        <span>🎅 <b>Real</b> beard</span>
-        <span>🛡️ <b>Insured</b></span>
-        <span>✓ <b>Background-checked</b></span>
       </div>
     </div>
   </header>
@@ -164,13 +229,13 @@
         <p class="sub">From boardrooms to living rooms — anywhere Santa would be a welcome addition to bring the season to life.</p>
       </div>
       <div class="cards">
-        <div class="card reveal"><div class="ic">🏢</div><h3>Corporate Events</h3><p>Company parties, client appreciation, and holiday gatherings with a touch of wonder.</p></div>
-        <div class="card reveal"><div class="ic">🎉</div><h3>Private Events</h3><p>Family celebrations, neighborhood parties, and special occasions of every kind.</p></div>
-        <div class="card reveal"><div class="ic">🏡</div><h3>Home Visits</h3><p>A personal visit from Santa, right at your door — names, wishes, and all.</p></div>
-        <div class="card reveal"><div class="ic">📸</div><h3>Photo Sessions</h3><p>Picture-perfect keepsakes with a genuine, warm-hearted Santa.</p></div>
-        <div class="card reveal"><div class="ic">🌲</div><h3>Tree Lighting Ceremonies</h3><p>Light up the season at community and municipal events.</p></div>
-        <div class="card reveal"><div class="ic">🎬</div><h3>Commercial &amp; TV</h3><p>Professional, reliable Santa for commercial and television productions.</p></div>
-        <div class="card reveal"><div class="ic">✨</div><h3>And More</h3><p>Anything where Santa would help bring the magic of the season alive.</p></div>
+        <div class="card reveal"><div class="ic"><svg class="icon" aria-hidden="true"><use href="#i-briefcase"/></svg></div><h3>Corporate Events</h3><p>Company parties, client appreciation, and holiday gatherings with a touch of wonder.</p></div>
+        <div class="card reveal"><div class="ic"><svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg></div><h3>Private Events</h3><p>Family celebrations, neighborhood parties, and special occasions of every kind.</p></div>
+        <div class="card reveal"><div class="ic"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg></div><h3>Home Visits</h3><p>A personal visit from Santa, right at your door — names, wishes, and all.</p></div>
+        <div class="card reveal"><div class="ic"><svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg></div><h3>Photo Sessions</h3><p>Picture-perfect keepsakes with a genuine, warm-hearted Santa.</p></div>
+        <div class="card reveal"><div class="ic"><svg class="icon" aria-hidden="true"><use href="#i-tree"/></svg></div><h3>Tree Lighting Ceremonies</h3><p>Light up the season at community and municipal events.</p></div>
+        <div class="card reveal"><div class="ic"><svg class="icon" aria-hidden="true"><use href="#i-film"/></svg></div><h3>Commercial &amp; TV</h3><p>Professional, reliable Santa for commercial and television productions.</p></div>
+        <div class="card reveal"><div class="ic"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg></div><h3>And More</h3><p>Anything where Santa would help bring the magic of the season alive.</p></div>
       </div>
     </div>
   </section>
@@ -183,40 +248,40 @@
         <h2>Moments with Santa Michael</h2>
       </div>
       <div class="gallery reveal">
-        <div class="photo"><img src="photos/web/IMG_4098.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4099.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4100.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4101.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4102.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4103.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4104.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4105.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4106.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4107.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4108.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4109.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4110.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4111.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4112.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4113.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4114.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4115.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4116.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4117.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4118.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4120.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4121.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4122.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4123.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4124.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4125.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4127.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4128.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4129.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4130.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4131.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4132.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
-        <div class="photo"><img src="photos/web/IMG_4133.jpg" alt="Santa Michael of New Mexico" loading="lazy"></div>
+        <div class="photo"><img src="photos/web/IMG_4098.jpg" width="800" height="1066" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4099.jpg" width="800" height="1066" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4100.jpg" width="800" height="992" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4101.jpg" width="800" height="1422" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4102.jpg" width="800" height="534" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4103.jpg" width="800" height="534" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4104.jpg" width="800" height="1198" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4105.jpg" width="800" height="997" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4106.jpg" width="800" height="1199" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4107.jpg" width="800" height="1199" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4108.jpg" width="800" height="1066" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4109.jpg" width="800" height="1066" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4110.jpg" width="800" height="533" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4111.jpg" width="800" height="1013" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4112.jpg" width="800" height="533" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4113.jpg" width="800" height="598" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4114.jpg" width="800" height="1066" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4115.jpg" width="800" height="801" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4116.jpg" width="800" height="1422" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4117.jpg" width="800" height="1500" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4118.jpg" width="759" height="1600" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4120.jpg" width="800" height="999" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4121.jpg" width="800" height="765" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4122.jpg" width="800" height="1120" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4123.jpg" width="800" height="1199" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4124.jpg" width="800" height="1120" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4125.jpg" width="800" height="1121" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4127.jpg" width="800" height="804" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4128.jpg" width="800" height="865" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4129.jpg" width="800" height="572" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4130.jpg" width="800" height="1120" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4131.jpg" width="800" height="532" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4132.jpg" width="800" height="572" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
+        <div class="photo"><img src="photos/web/IMG_4133.jpg" width="800" height="534" alt="Santa Michael of New Mexico" loading="lazy" decoding="async"></div>
       </div>
     </div>
   </section>
@@ -230,7 +295,7 @@
         <p class="sub">A commercial featuring Santa Michael of New Mexico.</p>
       </div>
       <a class="video-card reveal" href="https://www.facebook.com/share/r/1Ct4MKgf1U/" target="_blank" rel="noopener">
-        <span class="play">▶</span>
+        <span class="play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span>
         <span class="label">Watch the commercial on Facebook</span>
         <span class="sub-label">Opens in a new tab ↗</span>
       </a>
@@ -244,7 +309,14 @@
         <div class="eyebrow">About</div>
         <h2>Meet Santa Michael of New Mexico</h2>
       </div>
+      <ul class="facts reveal">
+        <li class="fact"><span class="fact-num">1982</span><span class="fact-label">First season as Santa</span></li>
+        <li class="fact"><span class="fact-num">30+</span><span class="fact-label">Years teaching elementary school</span></li>
+        <li class="fact"><span class="fact-num">2017</span><span class="fact-label">Became a full-time Santa</span></li>
+        <li class="fact"><span class="fact-num">IBRBS</span><span class="fact-label">Member, New Mexico Chapter</span></li>
+      </ul>
       <div class="about-body reveal">
+        <img class="about-photo" src="photos/web/IMG_4098.jpg" width="800" height="1066" alt="Santa Michael holding a gloved finger to his lips" loading="lazy" decoding="async">
         <p>Michael Briggs, also known as Santa Michael of New Mexico, has been bringing the spirit of Christmas to families, businesses, and communities for decades.</p>
         <p>A retired elementary school teacher of over 30 years, Michael’s journey as Santa Claus began in 1982 when he portrayed the jolly old elf at Coronado Center Mall during the Christmas season. What started as a seasonal role quickly grew into a lifelong passion. Over the years, he appeared at numerous corporate functions, professional photo shoots, charity events, and community celebrations, sharing joy and creating lasting memories for children and adults alike.</p>
         <p>In 2017, Michael began performing as Santa full-time. Since then, he has had the privilege of appearing at corporate events, private parties, home visits, television commercials, tree-lighting ceremonies, community festivals, and many other special occasions throughout New Mexico.</p>
@@ -326,15 +398,14 @@
       </div>
       <div class="contact-grid">
         <div class="reveal">
-          <div class="contact-line"><span>📧</span><a href="mailto:santamichael.nm@gmail.com">santamichael.nm@gmail.com</a></div>
-          <div class="contact-line"><span>📍</span><span>Serving New Mexico</span></div>
+          <div class="contact-line"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:santamichael.nm@gmail.com">santamichael.nm@gmail.com</a></div>
+          <div class="contact-line"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>Serving New Mexico</span></div>
           <div class="info-strip" style="margin-top:1.4rem">
-            <span class="ic">🛡️</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>
             <span>Background check and proof of insurance available on request.</span>
           </div>
         </div>
 
-        <!-- EDIT: replace YOUR-WEB3FORMS-ACCESS-KEY (both forms) — see README -->
         <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="reveal">
           <input type="hidden" name="access_key" value="c600d9ca-4794-4454-95a4-e8a1f2a8fe5d">
           <input type="hidden" name="subject" value="New inquiry — Contact Santa Michael">
@@ -383,7 +454,7 @@
       </div>
       <!-- User-facing notice: one submission per child -->
       <div class="info-strip reveal" style="margin-bottom:1.4rem">
-        <span class="ic">🎅</span>
+        <svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>
         <span><strong style="color:var(--color-text)">One report per child, please.</strong> So every child gets their own personalized visit, fill out and submit this form once for each child.</span>
       </div>
 
@@ -544,9 +615,8 @@
       </div>
       <div class="panel reveal">
         <div class="pay-row">
-          <!-- EDIT: replace YOUR-PAYPAL-LINK with the PayPal.me URL once ready -->
-          <a class="pay-btn" href="YOUR-PAYPAL-LINK" target="_blank" rel="noopener">💳 Pay with PayPal</a>
-          <span class="pay-btn"> Apple Pay accepted</span>
+          <a class="pay-btn" href="https://paypal.me/michaelbriggs614" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg>Pay with PayPal</a>
+          <span class="pay-btn">Apple Pay accepted</span>
         </div>
       </div>
     </div>
@@ -556,8 +626,13 @@
     <div class="wrap">
       <div class="brand">Santa&nbsp;Michael of New Mexico<span class="dot">.</span></div>
       <div class="social">
-        <a href="https://www.facebook.com/share/1DE2UCnnAV/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">f</a>
-        <a href="https://www.instagram.com/santamichaelofnewmexico" target="_blank" rel="noopener" aria-label="Instagram">◉</a>
+        <a href="https://www.facebook.com/share/1DE2UCnnAV/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a>
+        <a href="https://www.instagram.com/santamichaelofnewmexico" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+      </div>
+      <div class="footer-links">
+        <a href="#home-visit">Home Visit Form</a>
+        <a href="#terms">Terms</a>
+        <a href="#payment">Payment</a>
       </div>
       <p>Background check &amp; proof of insurance available on request.</p>
       <p>© <span id="year"></span> Santa Michael of New Mexico. Bringing the magic of the season to life.</p>
@@ -567,7 +642,8 @@
 
   <button id="to-top" class="to-top" aria-label="Back to top" title="Back to top">↑</button>
 
-  <script src="js/main.js?v=7"></script>
+  <!-- If main.js can't load, put "no-js" back so nothing stays hidden. -->
+  <script src="js/main.js?v=8" onerror="document.documentElement.classList.add('no-js')"></script>
   <script src="js/calendar.js?v=1"></script>
 </body>
 </html>
