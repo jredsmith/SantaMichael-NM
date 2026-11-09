@@ -11,14 +11,15 @@ works. Built on a structured design system — see
 
 ```
 santa-michael-nm/
-├── index.html          # markup (all content lives here)
+├── index.html          # markup (all content lives here, except the calendar schedule)
 ├── css/
 │   ├── tokens.css      # design tokens — theme the site here
 │   ├── base.css        # reset + element defaults
 │   ├── components.css  # buttons, cards, forms, panels
 │   └── layout.css      # nav, hero, grids, contact, footer
 ├── js/
-│   └── main.js         # year, scroll reveal, form submit, snow
+│   ├── main.js         # year, scroll reveal, form submit, snow
+│   └── calendar.js     # appearances calendar — schedule data + month grid
 ├── photos/             # gallery images
 ├── DESIGN-SYSTEM.md    # token reference + how to extend
 ├── .editorconfig       # consistent formatting
@@ -35,6 +36,21 @@ like production):
 python -m http.server 8000
 # then open http://localhost:8000
 ```
+
+## Updating the calendar
+
+The "Where to find Santa Michael" calendar is driven by two lists at the top of
+[`js/calendar.js`](js/calendar.js):
+
+- **`VENUES`** — one line per host: the name shown and the link it opens
+  (Instagram, or leave `url: ""` for no link). Fixing a host's link here fixes
+  it on every date.
+- **`EVENTS`** — one line per appearance: date (`YYYY-MM-DD`), time, host key,
+  and type. Keep each day's lines in the order they happen.
+
+The calendar shows only the months that have events and opens on today's date
+or the next upcoming one. After editing, bump `calendar.js?v=` at the bottom of
+`index.html` so browsers pick up the change.
 
 ## ✅ Things to fill in before going live
 

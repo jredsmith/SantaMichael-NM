@@ -21,10 +21,10 @@
 
   <!-- Stylesheets — ORDER MATTERS: tokens first.
        Bump the ?v= number whenever CSS changes, to bust browser caches. -->
-  <link rel="stylesheet" href="css/tokens.css?v=6">
-  <link rel="stylesheet" href="css/base.css?v=6">
-  <link rel="stylesheet" href="css/components.css?v=6">
-  <link rel="stylesheet" href="css/layout.css?v=6">
+  <link rel="stylesheet" href="css/tokens.css?v=7">
+  <link rel="stylesheet" href="css/base.css?v=7">
+  <link rel="stylesheet" href="css/components.css?v=7">
+  <link rel="stylesheet" href="css/layout.css?v=7">
 </head>
 <body>
   <div class="bg"></div>
@@ -89,6 +89,7 @@
         <span></span><span></span><span></span>
       </button>
       <div class="nav-links" id="nav-links">
+        <a href="#calendar">Calendar</a>
         <a href="#services">Services</a>
         <a href="#photos">Photos</a>
         <a href="#video">Watch</a>
@@ -110,6 +111,7 @@
       <p class="lead">Bringing the magic of the season to life — for corporate events, private parties, home visits, photo sessions, tree lightings, and beyond.</p>
       <div class="cta-row">
         <a href="#contact" class="btn btn-primary">Contact Santa Michael →</a>
+        <a href="#calendar" class="btn btn-ghost">Find Santa near you</a>
         <a href="#services" class="btn btn-ghost">See services</a>
       </div>
       <div class="trust">
@@ -119,6 +121,34 @@
       </div>
     </div>
   </header>
+
+  <!-- CALENDAR — the schedule itself lives in js/calendar.js -->
+  <section id="calendar">
+    <div class="wrap narrow">
+      <div class="sec-head reveal">
+        <div class="eyebrow">2026 season</div>
+        <h2>Where to find Santa Michael</h2>
+        <p class="sub">Gold dates have an appearance — tap one to see where Santa will be. For booking and details, follow the link to each host.</p>
+      </div>
+      <div class="cal reveal" id="cal" hidden>
+        <div class="cal-month">
+          <div class="cal-head">
+            <button type="button" class="cal-nav" id="cal-prev" aria-label="Previous month">‹</button>
+            <h3 class="cal-title" id="cal-title"></h3>
+            <button type="button" class="cal-nav" id="cal-next" aria-label="Next month">›</button>
+          </div>
+          <div class="cal-weekdays" aria-hidden="true">
+            <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+          </div>
+          <div class="cal-grid" id="cal-grid"></div>
+        </div>
+        <div class="cal-day" id="cal-day" aria-live="polite"></div>
+      </div>
+      <noscript>
+        <p class="sub">The calendar needs JavaScript. For upcoming appearances, see <a href="https://www.instagram.com/santamichaelofnewmexico" target="_blank" rel="noopener">Santa Michael on Instagram</a>.</p>
+      </noscript>
+    </div>
+  </section>
 
   <!-- SERVICES -->
   <section id="services">
@@ -532,6 +562,7 @@
 
   <button id="to-top" class="to-top" aria-label="Back to top" title="Back to top">↑</button>
 
-  <script src="js/main.js?v=6"></script>
+  <script src="js/main.js?v=7"></script>
+  <script src="js/calendar.js?v=1"></script>
 </body>
 </html>
