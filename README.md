@@ -43,10 +43,11 @@ The "Where to find Santa Michael" calendar is driven by two lists at the top of
 [`js/calendar.js`](js/calendar.js):
 
 - **`VENUES`** — one line per host: the name shown and the link it opens
-  (Instagram, or leave `url: ""` for no link). Fixing a host's link here fixes
+  (Instagram, Facebook or the host's own site; leave `url: ""` for no link). Fixing a host's link here fixes
   it on every date.
 - **`EVENTS`** — one line per appearance: date (`YYYY-MM-DD`), time, host key,
-  and type. Keep each day's lines in the order they happen.
+  and type, plus an optional note (one extra line under the host, such as the
+  event's name and where it is). Keep each day's lines in the order they happen.
 
 The calendar shows only the months that have events and opens on today's date
 or the next upcoming one. After editing, bump `calendar.js?v=` at the bottom of

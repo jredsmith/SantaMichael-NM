@@ -493,6 +493,8 @@ a.cal-host {
   transition: color var(--transition-fast), border-color var(--transition-fast);
 }
 a.cal-host:hover { color: var(--color-accent-soft); border-color: var(--color-accent); }
+/* optional extra line under the host: where it is, what the event is */
+.cal-note { margin-top: var(--space-2xs); font-size: var(--text-sm); color: var(--color-text-dim); }
 
 /* -------------------------------------------------------------
    Back-to-top button (appears after scrolling down)

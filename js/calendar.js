@@ -32,14 +32,19 @@
     mfauto:      { name: "M&F Auto Sales",               url: IG + "mandfautosales/" },
     cabq:        { name: "City of Albuquerque",          url: "" },
     swingpickle: { name: "Swing-N-Pickle",               url: IG + "swingnpickle/" },
+    ivy:         { name: "The Ivy Tearoom",              url: "https://theivytearoom.com/book/" },
   };
 
   /* ---- Appearances ---------------------------------------------------
-     [ date (YYYY-MM-DD), time, host key from VENUES, type ]
+     [ date (YYYY-MM-DD), time, host key from VENUES, type, note ]
+     The note is optional: one extra line shown under the host (the
+     event's name, where it is, and so on).
      Keep each day's rows in the order they happen.                     */
   const EVENTS = [
     ["2026-11-08", "11:00 AM – 3:00 PM",  "danielle",    "Photo Session"],
     ["2026-11-09", "5:30 – 8:00 PM",      "sandia",      "Santa Visit"],
+    ["2026-11-13", "6:00 – 7:00 PM",      "cabq",        "Community Event",
+      "Globitos Community Event & Pop-Up Market at North Domingo Baca Multigenerational Center. Free and open to the public; the event runs 5:00 – 8:00 PM."],
     ["2026-11-14", "10:00 AM – 2:00 PM",  "burning",     "Photo Session"],
     ["2026-11-15", "9:00 AM – 12:00 PM",  "taylor",      "Photo Session"],
     ["2026-11-15", "1:30 – 3:30 PM",      "kate",        "Photo Session"],
@@ -66,7 +71,7 @@
     ["2026-12-12", "9:15 – 10:30 AM",     "livmimi",     "Photo Session"],
     ["2026-12-12", "11:00 AM – 5:00 PM",  "sandia",      "Santa Visit"],
     ["2026-12-13", "11:00 AM – 5:00 PM",  "sandia",      "Santa Visit"],
-    ["2026-12-13", "6:00 – 7:00 PM",      "cabq",        "Community Event"],
+    ["2026-12-13", "6:00 – 8:00 PM",      "ivy",         "Santa Visit"],
     ["2026-12-16", "9:00 – 9:30 AM",      "livmimi",     "Storytime"],
     ["2026-12-17", "5:30 – 7:30 PM",      "sawmill",     "Santa Visit"],
     ["2026-12-18", "4:30 – 7:30 PM",      "sawmill",     "Santa Visit"],
@@ -105,9 +110,9 @@
 
   /* ---- Index the events by date -------------------------------------- */
   const byDate = new Map();
-  EVENTS.forEach(([date, time, venue, type]) => {
+  EVENTS.forEach(([date, time, venue, type, note]) => {
     if (!byDate.has(date)) byDate.set(date, []);
-    byDate.get(date).push({ time, venue: VENUES[venue], type });
+    byDate.get(date).push({ time, venue: VENUES[venue], type, note });
   });
   const dates = Array.from(byDate.keys()).sort();
   const months = Array.from(new Set(dates.map((d) => d.slice(0, 7))));   // e.g. "2026-11"
@@ -184,11 +189,13 @@
       host.className = "cal-host";
       host.textContent = ev.venue.name;
       if (ev.venue.url) {
-        const site = ev.venue.url.includes("facebook.com") ? "Facebook" : "Instagram";
+        // say where the link goes; a host's own website needs no label
+        const site = ev.venue.url.includes("facebook.com") ? " on Facebook"
+          : ev.venue.url.includes("instagram.com") ? " on Instagram" : "";
         host.href = ev.venue.url;
         host.target = "_blank";
         host.rel = "noopener";
-        host.setAttribute("aria-label", ev.venue.name + " on " + site + " (opens in a new tab)");
+        host.setAttribute("aria-label", ev.venue.name + site + " (opens in a new tab)");
         const arrow = document.createElement("span");
         arrow.setAttribute("aria-hidden", "true");
         arrow.textContent = " ↗";
@@ -196,6 +203,12 @@
       }
 
       li.append(top, host);
+      if (ev.note) {
+        const note = document.createElement("p");
+        note.className = "cal-note";
+        note.textContent = ev.note;
+        li.appendChild(note);
+      }
       list.appendChild(li);
     });
     dayEl.appendChild(list);
